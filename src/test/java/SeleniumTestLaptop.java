@@ -42,9 +42,11 @@ public class SeleniumTestLaptop {
         //Doy tiempo a cargar la página
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         //Obtengo el precio del primer producto
-        String precioVaio = driver.findElement(By.xpath("//div[@id='tbodyid']//div[1]//div[1]//div[1]//h5[1]")).getText();
+        //String precioVaio = driver.findElement(By.xpath("//div[@id='tbodyid']//div[1]//div[1]//div[1]//h5[1]")).getText();
+        WebElement precioVaio = driver.findElement(By.xpath("//div[@id='tbodyid']//div[1]//div[1]//div[1]//h5[1]"));
         //Muestro en consola para verificar que se carga bien
         System.out.println(precioVaio);
+        assertEquals(precioVaio.getText(),"$790");
 
         //Doy tiempo a cargar la página
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
